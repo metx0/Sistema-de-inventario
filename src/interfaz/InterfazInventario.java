@@ -549,7 +549,7 @@ public class InterfazInventario extends javax.swing.JFrame {
 
         // Verificar si el texto está vacío o contiene solo espacios en blanco
         if (nombreArchivoCSV.trim().isEmpty()) {
-            nombreArchivoCSV = "Registro";
+            nombreArchivoCSV = "Reporte";
         }
         
         if (inventario.listaProductos.size() == 0) {
@@ -568,8 +568,19 @@ public class InterfazInventario extends javax.swing.JFrame {
         Nodo nodoActual = cola.getFrente();
         
         try {
-            FileWriter creador_csv = new FileWriter(nombreArchivoCSV + ".csv");
 
+            int contador = 1;
+            String nombreArchivoOriginal = nombreArchivoCSV;
+            File archivoExistente = new File(nombreArchivoCSV + ".csv");
+            while (archivoExistente.exists()) {
+                // Generar un nombre de archivo único si ya existe
+                nombreArchivoCSV = nombreArchivoOriginal + "_" + contador;
+                archivoExistente = new File(nombreArchivoCSV + ".csv");
+                contador++;
+            }
+            
+            FileWriter creador_csv = new FileWriter(nombreArchivoCSV + ".csv"); // Crea un nuevo archivo en lugar de abrir en modo de añadir
+               
             while (nodoActual != null) {
                 Producto producto = nodoActual.getProducto(); // Obtener el producto del nodo
 
@@ -591,15 +602,19 @@ public class InterfazInventario extends javax.swing.JFrame {
                 nodoActual = nodoActual.getSiguiente();
             }
 
+            creador_csv.write(System.lineSeparator()); // Agregar un salto de línea después de cada bloque de datos
+            
+            //Borrar la cola
+            while (!cola.estaVacia()) {
+                cola.eliminar();
+            }
             // Cerrar el objeto FileWriter después de usarlo
             creador_csv.close();
-            
-            JOptionPane.showMessageDialog(this, "El registo ha sido creado.", "Tarea completada", JOptionPane.INFORMATION_MESSAGE);
+
+            JOptionPane.showMessageDialog(this, "El registro ha sido creado.", "Tarea completada", JOptionPane.WARNING_MESSAGE);
         } catch (IOException ex) {
             Logger.getLogger(InterfazInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-
     }//GEN-LAST:event_btnReporteActionPerformed
 
     private void jTextField_nombre_archivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_nombre_archivoActionPerformed
