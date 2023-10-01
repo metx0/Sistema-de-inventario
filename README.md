@@ -13,12 +13,18 @@ Los productos tienen fechas de caducidad, por lo que la lista de productos se or
 
 ## El programa en funcionamiento
 - Inserta el nombre, la ID, la cantidad en stock, el precio y la fecha de caducidad de un lote de productos.
+  
 ![sys](https://i.imgur.com/ZjJ8Gz3.png)
 - Inserte la cantidad a vender de productos sustituyendo los valores en la columna y oprima el boton las veces que quiera.
+  
 ![sys](https://i.imgur.com/XXM7WDB.png)
+
 - Consulte en una tabla el nombre, ID, cantidad en stock y la fecha de caducidad de un lote de productos. Estos estan en el orden en que se insertaron.
+
 ![sys](https://i.imgur.com/A1Xx4Qx.png)
+
 - Cree un reporte de los lotes disponibles, con las fechas de caducidad ordenadas.
+  
 ![sys](https://i.imgur.com/tFlhqEa.png)
 
 
