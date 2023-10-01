@@ -15,11 +15,11 @@ Los productos tienen fechas de caducidad, por lo que la lista de productos se or
 - Inserta el nombre, la ID, la cantidad en stock, el precio y la fecha de caducidad de un lote de productos.
   
 ![sys](https://i.imgur.com/ZjJ8Gz3.png)
-- Inserte la cantidad a vender de productos sustituyendo los valores en la columna y oprima el boton las veces que quiera.
+- Inserte la cantidad a vender de productos sustituyendo el valor predeterminado de la tercera columna y oprima el botón las veces que quiera.
   
 ![sys](https://i.imgur.com/XXM7WDB.png)
 
-- Consulte en una tabla el nombre, ID, cantidad en stock y la fecha de caducidad de un lote de productos. Estos estan en el orden en que se insertaron.
+- Consulte en una tabla el nombre, ID, cantidad en stock y la fecha de caducidad de un lote de productos. Estos están en el orden en que se insertaron.
 
 ![sys](https://i.imgur.com/A1Xx4Qx.png)
 
